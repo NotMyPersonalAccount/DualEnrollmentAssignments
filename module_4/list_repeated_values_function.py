@@ -13,10 +13,12 @@ If the function is called with the argument [0, 1, "hello," 3.5, "hello"], retur
 '''
 
 def has_repeat_values(list):
-	for i in range(len(list) - 1):
-		for j in range(i+1, len(list)):
-			if list[i] == list[j]:
+	found = []
+	for i in list:
+		for j in found:
+			if i == j:
 				return True
+		found.append(i)
 	return False
 
 print(has_repeat_values([0, 1, "hello", 3.5]))
