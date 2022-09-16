@@ -17,9 +17,10 @@ Would return 21.
 '''
 
 def fib(x):
-	list = [0, 1]
-	for _ in range(x - 1):
-		list.append(list[len(list) - 1] + list[len(list) - 2])
-	print(list)
-	return list[x]
-print(fib(1))
+	a = 0
+	b = 1
+	for i in range(x):
+		a = a + b
+		b = a - b
+	return a
+print(fib(8))
