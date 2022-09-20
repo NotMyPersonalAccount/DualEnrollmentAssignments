@@ -21,7 +21,4 @@ dice = int(input("Enter the number of dice to roll: "))
 sides = int(input("Enter the number of sides per die: "))
 
 while True:
-	total = 0
-	for _ in range(dice):
-		total += randint(1, sides)
-		input(f"You rolled ({dice}) {sides}-sided dice and got: {total}")
+	input(f"You rolled ({dice}) {sides}-sided dice and got: {randint(dice, dice * sides)}")
