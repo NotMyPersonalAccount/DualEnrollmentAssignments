@@ -18,7 +18,7 @@ def factorial_std(number):
 	return math.factorial(number)
 
 def factorial(number):
-	total = 1
-	for i in range(1, number + 1):
-		total *= i
-	return total
+    total = 1
+    for i in range(2, number + 1):
+        total *= i
+    return total
