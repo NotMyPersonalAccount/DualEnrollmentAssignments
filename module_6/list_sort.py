@@ -12,13 +12,40 @@ Your function should handle duplicated values in the argument list! For example,
 Note:  For this exercise you can choose whether to modify the list given as argument and return that, or create an entirely new sorted list and return that.
 '''
 
-def sort(list):
-    sorted = []
-    while len(list) > 0:
-        min_index = 0
-        for index in range(len(list)):
-            if list[index] < list[min_index]:
-                min_index = index
-        min = list.pop(min_index)
-        sorted.append(min)
-    return sorted
+def selection_sort(list):
+    for i in range(len(list) - 1):
+        min_index = i + 1
+        for j in range(i + 1, len(list)):
+            print(i, j)
+            if list[min_index] > list[j]:
+                min_index = j
+        temp = list[i]
+        list[i] = list[min_index]
+        list[min_index] = temp
+    return list
+
+def insertion_sort(list):
+    for i in range(1, len(list)):
+        temp = list[i]
+        j = i - 1
+        while j >= 0 and list[j] > temp:
+            list[j + 1] = list[j]
+            j -= 1
+        list[j + 1] = temp
+    return list
+
+from random import randint
+
+def bogo_sort(list):
+    while True:
+        for i in range(len(list)):
+            key = randint(0, len(list) - 1)
+            temp = list[i]
+            list[i] = list[key]
+            list[key] = temp
+        for i in range(1, len(list)):
+            if list[i - 1] > list[i]:
+                break
+        else:
+            break
+    return list
