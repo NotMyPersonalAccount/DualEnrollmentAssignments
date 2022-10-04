@@ -46,4 +46,6 @@ while True:
     elif action == "r":
         key = input("What key do you want to remove? ")
         del dict[key]
+    else:
+        continue
     print(f"Currently the dictionary is as follows: {dict}")
